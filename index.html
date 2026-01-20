@@ -1,78 +1,52 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Data Siswa Interaktif</title>
+    <title>Surat Spesial Ulang Tahun</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container">
-      <h1>Input Data Siswa</h1>
-      <form id="studentForm">
-        <div class="form-group">
-          <label for="nama">Nama Siswa:</label>
-          <input type="text" id="nama" required />
-        </div>
-        <div class="form-group">
-          <label for="jurusan">Jurusan:</label>
-          <input type="text" id="jurusan" required />
-        </div>
-        <div class="form-group">
-          <label for="kelas">Kelas:</label>
-          <select
-            id="kelas"
-            required
-            style="
-              width: 100%;
-              padding: 10px;
-              border: 1px solid #ccc;
-              border-radius: 5px;
-            "
-          >
-            <option value="">-- Pilih Kelas --</option>
-            <option value="10">Kelas 10</option>
-            <option value="11">Kelas 11</option>
-            <option value="12">Kelas 12</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="nilaiDp">Nilai Dp:</label>
-          <input type="number" id="nilaiDp" required />
-        </div>
-        <div class="form-group">
-          <label for="nilaiInf">Nilai Inf:</label>
-          <input type="number" id="nilaiInf" required />
-        </div>
-        <div class="form-group">
-          <label for="nilaiBindo">Nilai Bindo:</label>
-          <input type="number" id="nilaiBindo" required />
-        </div>
-        <button type="submit">Tambahkan Data</button>
-      </form>
+    <!-- Pastikan file MP3 ada di folder yang sama agar terbaca -->
+    <audio id="laguUltah" loop>
+      <source
+        src="C:\Users\ACER\Downloads\TULUS - Monokrom (Official Music Video).mp3"
+        type="audio/mpeg"
+      />
+    </audio>
 
-      <h2>Data Siswa Tersimpan</h2>
-      <div class="table-container">
-        <table id="studentTable">
-          <thead>
-            <tr>
-              <th>No</th>
-              <th>Nama</th>
-              <th>Kelas</th>
-              <th>Jurusan</th>
-              <th>Nilai Dp</th>
-              <th>Nilai Inf</th>
-              <th>Nilai Bindo</th>
-              <th>Rata-rata</th>
-            </tr>
-          </thead>
-          <tbody id="tableBody">
-            <!-- Data akan dimasukkan di sini oleh JavaScript -->
-          </tbody>
-        </table>
+    <div class="door-frame" id="door-trigger" onclick="openAndShowLetter()">
+      <div class="text-hint">Klik Amplop Ini</div>
+      <div id="main-door" class="door">
+        <div class="flap"></div>
+        <div class="seal-envelope">✉️</div>
+      </div>
+    </div>
+
+    <div id="letter-container" class="letter-card">
+      <div class="seal-cake">🎂</div>
+      <div class="message-area">
+        <h2>Selamat Ulang Tahun!</h2>
+        <div class="content">
+          Halo Sahara Romadina Sidauruk 🤪<br /><br />
+          Di hari yang spesial ini, aku cuma mau bilang selamat ulang tahun ya
+          MANTAN 🎂🥳. Semoga semua doa-doa baikmu segera dikabulkan di tahun
+          2026 ini.<br /><br />
+          Tetaplah jadi orang baik dan bahagia ya!
+        </div>
+        <div class="photo-frame">
+          <img
+            src="C:\Users\ACER\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\sessions\E6592170F6422D13F67EC3185C4A9308C7CC0722\transfers\2026-03\WhatsApp Image 2026-01-20 at 19.04.51.jpeg"
+            alt="Foto Kenangan"
+          />
+        </div>
+        <p class="signature">- Dari Mantan Mu -</p>
+        <p class="signature">- Kalo Minta Hadiah, Sini Nomor Dana Mu -</p>
       </div>
     </div>
 
     <script src="script.js"></script>
   </body>
 </html>
+
+

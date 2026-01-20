@@ -1,49 +1,26 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('studentForm');
-    const tableBody = document.getElementById('tableBody');
-    let students = [];
+function openAndShowLetter() {
+  const musik = document.getElementById("laguUltah");
+  const door = document.getElementById("main-door");
+  const letter = document.getElementById("letter-container");
+  const trigger = document.getElementById("door-trigger");
 
-    form.addEventListener('submit', function(event) {
-        event.preventDefault(); // Mencegah form untuk refresh halaman
+  // Putar musik saat klik pertama
+  musik.play().catch((error) => {
+    console.log("Musik gagal putar: ", error);
+  });
 
-        const nama = document.getElementById('nama').value;
-        const kelas = document.getElementById('kelas').value;
-        const jurusan = document.getElementById('jurusan').value;
-        // Menggunakan parseInt untuk memastikan nilai adalah angka, seperti di C++
-        const nilaiDp = parseInt(document.getElementById('nilaiDp').value);
-        const nilaiInf = parseInt(document.getElementById('nilaiInf').value);
-        const nilaiBindo = parseInt(document.getElementById('nilaiBindo').value);
+  // Animasi buka amplop
+  door.classList.add("open");
 
-        const newStudent = {
-            nama,
-            kelas,
-            jurusan,
-            nilaiDp,
-            nilaiInf,
-            nilaiBindo,
-            rataRata: (nilaiDp + nilaiInf + nilaiBindo) / 3
-        };
+  // Delay munculnya kertas surat
+  setTimeout(() => {
+    trigger.style.opacity = "0";
+    trigger.style.transition = "opacity 0.8s ease";
 
-        students.push(newStudent);
-        renderTable();
-        form.reset(); // Mengosongkan form setelah submit
-    });
+    setTimeout(() => {
+      trigger.style.display = "none";
+      letter.classList.add("visible");
+    }, 800);
+  }, 1200);
+}
 
-    function renderTable() {
-        tableBody.innerHTML = ''; // Mengosongkan tabel sebelum render ulang
-        students.forEach((student, index) => {
-            const row = document.createElement('tr');
-            row.innerHTML = `
-                <td>${index + 1}</td>
-                <td>${student.nama}</td>
-                <td>${student.kelas}</td>
-                <td>${student.jurusan}</td>
-                <td>${student.nilaiDp}</td>
-                <td>${student.nilaiInf}</td>
-                <td>${student.nilaiBindo}</td>
-                <td>${student.rataRata.toFixed(2)}</td>
-            `;
-            tableBody.appendChild(row);
-        });
-    }
-});
